@@ -1,14 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-*::selection{
+*::selection {
     background-color: #afecd1;
     color: #1c1c1c;
 }
@@ -16,10 +18,20 @@
 body {
     background: black;
 }
-::-webkit-scrollbar{
-    display: none;
- }
 
-.blur_it{
+::-webkit-scrollbar {
+    display: none;
+}
+
+.blur_it {
     backdrop-filter: blur(20px);
+}
+
+
+.thick_text {
+    font-family: 'Bebas Neue', sans-serif;
+    background: -webkit-linear-gradient(white 5%, #008f4f 15%, transparent 90%);
+    -webkit-background-clip: text;
+    cursor: default;
+    -webkit-text-fill-color: transparent;
 }

@@ -58,9 +58,9 @@ const LoginMethodDir = () => {
                 <motion.div animate={{width: "100%"}} initial={{width: 0}} transition={{width: {duration: 1, delay: 0.5, ease: [0.83, 0, 0.17, 1]}}} className={`bg-white rounded-xl w-full h-[0.8rem] absolute bottom-[-1rem] left-0 `} />
             </motion.h1>
             <form className={`mt-[5rem]`}>
-                <input className={`w-full bg-transparent border-2 border-white p-4 blur_it rounded-xl text-[1.1rem]`} placeholder={'Username:'}/>
+                <input className={`w-full outline-none bg-transparent border-2 border-white p-4 blur_it rounded-xl text-[1.1rem]`} placeholder={'Username:'}/>
                 <div className={`flex mt-8 gap-[1rem] justify-between`}>
-                    <input ref={passwordInputRef} className={`w-full bg-transparent border-2 border-white p-4 blur_it rounded-xl text-[1.1rem]`} type={passwordInputType} placeholder={'Password:'}/>
+                    <input ref={passwordInputRef} className={`w-full outline-none bg-transparent border-2 border-white p-4 blur_it rounded-xl text-[1.1rem]`} type={passwordInputType} placeholder={'Password:'}/>
                     <button onClick={(e) => {
                         e.preventDefault();
                         if(passwordInputType == 'password') setPasswordInputType('text');
