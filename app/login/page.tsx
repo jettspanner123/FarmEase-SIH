@@ -60,7 +60,7 @@ const LoginMethodDir = () => {
             <form className={`mt-[5rem]`}>
                 <input className={`w-full outline-none bg-transparent border-2 border-white p-4 blur_it rounded-xl text-[1.1rem]`} placeholder={'Username:'}/>
                 <div className={`flex mt-8 gap-[1rem] justify-between`}>
-                    <input ref={passwordInputRef} className={`w-full outline-none bg-transparent border-2 border-white p-4 blur_it rounded-xl text-[1.1rem]`} type={passwordInputType} placeholder={'Password:'}/>
+                    <input ref={passwordInputRef} className={`w-full outline-none bg-transparent border-2 border-white p-2 blur_it rounded-xl text-[1.1rem]`} type={passwordInputType} placeholder={'Password:'}/>
                     <button onClick={(e) => {
                         e.preventDefault();
                         if(passwordInputType == 'password') setPasswordInputType('text');

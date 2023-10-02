@@ -27,6 +27,9 @@ body {
     backdrop-filter: blur(20px);
 }
 
+.background_dedo{
+    background-color: rgba(33, 33, 33, 0.15);
+}
 
 .thick_text {
     font-family: 'Bebas Neue', sans-serif;
