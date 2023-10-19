@@ -33,8 +33,17 @@ const Page = () => {
 
     const [boxProperties, setBoxProperties] = React.useState({height: '15rem', width: '25rem', position: ''})
 
+    const options = [
+        {title: 'ChatAPI', link: 'chatapi'},
+        {title: 'E-Commerce', link: 'eC'},
+        {title: 'Weather', link: 'weatherToday'}
+    ]
+
+    const [loaderState, setLoaderState] = React.useState(false);
     return <React.Fragment>
         <DashBoardNavbar/>
+        {/*this is the loader*/}
+        <motion.div animate={{x: loaderState ? '0' : '-100vw'}} transition={{ease: [0.83, 0, 0.17, 1]}} className={`fixed transition-all duration-700 bg-gradient-to-br from-[#007c44] to-black top-0  w-screen h-screen z-[100]`} />
         <FullPageDiv classStyles={'text-white h-[200vh]'}>
             <section
                 style={{backgroundImage: `radial-gradient(circle farthest-side at 45vw 100vh, #074d2d 0%, transparent 100%`}}
@@ -57,20 +66,31 @@ const Page = () => {
 
             </section>
             <motion.section ref={rootRef} style={{top}}
-                            className={`w-[100vw] p-10 border-b-4 border-t-4 border-[#008f4f] mb-10 h-[200vh] absolute  bg-[#212121] left-0 rounded-t-[5rem]`}>
+                            className={`w-[100vw] p-10  border-b-4 border-t-4 border-[#008f4f] mb-10 h-[200vh] absolute  bg-[#212121] left-0 rounded-t-[5rem]`}>
                 <motion.h1 className={`m-10 font-bold text-[4rem] inline-block relative`}>
-                    Attributes:
+                    Attributes & Tools:
                     <motion.div whileInView={{width: "100%"}} initial={{width: "0%"}}
                                 transition={{width: {duration: 1, delay: 0.05, ease: [0.83, 0, 0.17, 1]}}}
                                 className={`w-full h-[1rem] rounded-xl bg-white absolute bottom-[-1rem]`}/>
 
 
                 </motion.h1>
-                {/*the gride section*/}
-                <div  className={`grid md:grid-cols-3 gap-y-[5rem] mt-10 px-[3rem]`}>
-                    <div className={`w-[25rem] hover:shadow-[#064629] transition-all duration-300 hover:-translate-y-[1rem]  font-bold h-[15rem] bg-black border-2 border-gray-500 shadow-2xl rounded-xl flex justify-center items-center`}>
-                        ChatBot
-                    </div>
+                {/*the grid section*/}
+                <div  className={`grid grid-cols-4 place-items-center mt-[3rem] w-full `}>
+                    {options.map((items:{title: String, link: String}) => {
+                        //@ts-ignore
+                        return <div onClick={() => {
+                            setLoaderState(!loaderState);
+                            setTimeout(() => {
+                                //@ts-ignore
+
+                                window.location.assign(items.link)
+                                //@ts-ignore
+                            }, [1300])
+                        }} className={`w-[20rem] hover:shadow-[#064629] transition-all duration-300 hover:-translate-y-[1rem]  font-bold h-[15rem] bg-black border-2 border-gray-500 shadow-2xl rounded-xl flex justify-center items-center`}>
+                            {items.title}
+                        </div>
+                    })}
                 </div>
             </motion.section>
         </FullPageDiv>

@@ -37,6 +37,8 @@ export default function Home() {
     const top = useTransform(scrollYProgress, [0, 1], ["150vh", "0vh"]);
     return (
         <React.Fragment>
+
+            {/*this is the loader */}
             <motion.div style={{backgroundImage: `radial-gradient(circle farthest-side at 0px 0px, #000076 0%, #0d151c 50%`}} animate={{top: loader ? '0' : '-100vh'}} transition={{duration: 1, ease: [0.65, 0, 0.35, 1]}}
                         className={`  fixed top-[-100vh] w-screen h-screen z-[1000] pointer-events-none text-[4rem] stroke-2 stroke-black font-bold text-white flex justify-center items-center`}> Loading
                 FarmerWorld.
@@ -68,23 +70,27 @@ export default function Home() {
                     <div className={`mt-[5rem]`}>
                         <h1 className={`font-bold text-[4rem] text-white mx-[2rem]`}>About:</h1>
                         <LeftScrollSlider/>
-                        <div className={`mt-[10rem] w-full flex justify-center h-[40rem]  items-center`}>
+                        <div className={`mt-[10rem] w-full flex justify-center h-[46rem]  items-center`}>
                             <div className={'h-full   relative  flex-1 overflow-hidden'}>
                                 <h1 style={{backgroundImage: 'radial-gradient(circle farthest-side at 0px 0px, #004d2b 0%, transparent 100%)'}}
                                     className={'w-full text-center text-[8vw] text-white font-bold border-2 border-white p-6 '}>FarmEase.</h1>
                             </div>
                             <div
-                                className={`h-full bg-green-50 flex-1 bg-transparent border-2 border-white flex flex-col items-center p-10`}>
-                                <RevealText customStyles={'text-white text-[2.5rem]'}
-                                            reveal_text={"Hello my name is Uddeshya Singh"}
+                                className={`h-full bg-green-50 flex-1 bg-transparent border-2 border-white flex flex-col  items-center p-10`}>
+                                <RevealText customStyles={'text-white text-[2.5rem] text-justify'}
+                                            reveal_text={"Farmease is a comprehensive platform that equips farmers with all"}
                                             reveal_div_customStyles={'bg-gradient-to-r from-green-300 to-white'}/>
-                                <RevealText customStyles={'text-white text-[2.5rem]'}
-                                            reveal_text={"I study in Chitkara Uinversity"}
+                                <RevealText customStyles={'text-white text-[2.5rem] text-justify'}
+                                            reveal_text={"the necessary tools, including a marketplace where they can easily"}
+                                            reveal_div_customStyles={'bg-gradient-to-r from-green-300 to-white'}/>
+                                <RevealText customStyles={'text-white text-[2.5rem] text-justify'}
+                                            reveal_text={'buy and sell the products they desire.  It provides them with a wide range of essential tools, along with a user-friendly marketplace, facilitating effortless transactions for buying and selling their desired agricultural products.'}
                                             reveal_div_customStyles={'bg-gradient-to-r from-green-300 to-white'}/>
                             </div>
                         </div>
+                        <div className={`mt-[10rem] relative text-white flex justify-center items-center w-screen `}>
 
-
+                        </div>
                     </div>
                 </motion.section>
         </React.Fragment>
