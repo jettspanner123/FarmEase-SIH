@@ -1,5 +1,4 @@
 import React from "react";
-import {motion, useScroll, useTransform} from "framer-motion";
 import Image from "next/image"
 import PhoneImage from "../src/phone_image.webp"
 import PhoneChildImage from "../src/phone_child_image.png"

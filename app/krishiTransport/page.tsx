@@ -13,10 +13,10 @@ const Page = () => {
     const [budgetRef, setBudgetRef] = React.useState("");
 
     function generateUUID() {
-        var d = new Date().getTime();
-        var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now() * 1000)) || 0;
+        let d = new Date().getTime();
+        let d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now() * 1000)) || 0;
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-            var r = Math.random() * 16;
+            let r = Math.random() * 16;
             if (d > 0) {
                 r = (d + r) % 16 | 0;
                 d = Math.floor(d / 16);
@@ -29,17 +29,6 @@ const Page = () => {
     }
 
 
-    function removeDuplicates(array: any[], key: any) {
-        const seen = new Set();
-        return array.filter((item) => {
-            const value = item[key];
-            if (!seen.has(value)) {
-                seen.add(value);
-                return true;
-            }
-            return false;
-        });
-    }
 
     const HandleSubmit = (e: { preventDefault: () => void; }): void => {
         e.preventDefault();
@@ -106,7 +95,6 @@ const Page = () => {
         }
     }, [])
 
-    const top = useTransform(scrollYProgress, [0, 0.2], ["0vh", "-100vh"]);
     const width = useTransform(scrollYProgress, [0, 0.37], ["50vw", "100vw"]);
 
     const opacity = useTransform(scrollYProgress, [0.26, 0.37], [0, 1]);

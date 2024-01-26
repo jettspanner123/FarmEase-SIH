@@ -10,7 +10,7 @@ const NavbarLarge = ({setLoader}: NavbarLargeProps) => {
     return <motion.div animate={{y: 0}} initial={{y: -100}} transition={{ease: [0.65, 0, 0.35, 1], duration: 1, delay: 1}} className={`blur_it bg-transparent items-center text-white fixed top-0 z-10 w-screen flex justify-between px-10 py-6`}>
         <div className={`text-[2rem] font-bold hover:tracking-[1rem] transition-all duration-500 cursor-default`}>FARMEASE</div>
         <ul className={'flex gap-[1rem]'}>
-            <li onClick={() => {
+            <li onClick={():void => {
                 setLoader(true);
                 setTimeout(() => {
                     window.location.assign('/login')

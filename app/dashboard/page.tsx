@@ -25,26 +25,17 @@ const Page = () => {
             setMousePosition({x: event.clientX, y: event.clientY})
         })
         return () => {
-            window.addEventListener("mousemove", (event) => {
+            window.addEventListener("mousemove", () => {
             });
         }
     }, [])
     const {scrollYProgress} = useScroll();
     const top = useTransform(scrollYProgress, [0, 1], ["100vh", "0vh"])
 
-    const [boxProperties, setBoxProperties] = React.useState({height: '15rem', width: '25rem', position: ''})
     const [loaderState, setLoaderState] = React.useState(false);
 
 
-
-
     const [firstDivRef, setAnimationDiv] = useAnimate();
-
-
-
-
-
-
 
 
     return <React.Fragment>
@@ -88,7 +79,12 @@ const Page = () => {
                     <div
                         ref={firstDivRef}
                         onClick={() => {
-                            setAnimationDiv(firstDivRef.current, {scale: 5, color: "white"}, {scale: {delay: 1, duration: 1}, color: {delay: 0, duration: 0.5}})
+                            setAnimationDiv(firstDivRef.current, {scale: 5, color: "white"}, {
+                                scale: {
+                                    delay: 1,
+                                    duration: 1
+                                }, color: {delay: 0, duration: 0.5}
+                            })
                             setAnimationDiv(firstDivRef.current, {zIndex: 1, position: "relative"})
                             setTimeout(() => {
                                 window.location.assign("/krishiTransport")
