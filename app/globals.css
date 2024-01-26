@@ -19,7 +19,7 @@ body {
     background: black;
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar{
     display: none;
 }
 
@@ -34,6 +34,7 @@ body {
 .thick_text {
     font-family: 'Bebas Neue', sans-serif;
     background: -webkit-linear-gradient(white 5%, #008f4f 15%, transparent 90%);
+    text-transform: uppercase;
     -webkit-background-clip: text;
     cursor: default;
     -webkit-text-fill-color: transparent;
