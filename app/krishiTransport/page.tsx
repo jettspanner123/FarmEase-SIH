@@ -115,6 +115,7 @@ const Page = () => {
             <div className={`flex justify-center items-center pt-[10rem] relative`}>
                 {"Krishi - Transportation: ".split("").map((item, index) => {
                     return <motion.span
+                        key={index}
                         animate={{y: 0}}
                         initial={{y: -300}}
                         transition={{ease: [0.85, 0, 0.15, 1], delay: 0.005 * index, duration: 2}}
